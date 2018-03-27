@@ -56,14 +56,14 @@ extension {{ module_info.name }}ViewController: PaginationWrapperDelegate {
 
     typealias DataSourceType = {{ module_info.name }}Cursor
 
-    func paginationWrapper(didLoad newItems: [Pizza],
-                           using dataSource: {{ module_info.name }}Cursor) {
+    func paginationWrapper(didLoad newItems: DataSourceType.ResultType,
+                           using dataSource: DataSourceType) {
 
         tableDirector.append(rows: <#T##[Row]#>)
     }
 
-    func paginationWrapper(didReload allItems: [Pizza],
-                           using dataSource: {{ module_info.name }}Cursor) {
+    func paginationWrapper(didReload allItems: DataSourceType.ResultType,
+                           using dataSource: DataSourceType) {
 
         tableDirector.replace(withRows: <#T##[Row]#>)
     }
