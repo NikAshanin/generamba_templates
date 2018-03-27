@@ -8,9 +8,7 @@ final class {{ module_info.name }}ViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
 
-    private lazy var tableDirector = {
-        TableDirector(tableView: tableView)
-    }()
+    private lazy var tableDirector = TableDirector(tableView: tableView)
 
     private lazy var paginationWrapper = {
         PaginationWrapper(wrappedView: AnyPaginationWrappable(view: tableView),
