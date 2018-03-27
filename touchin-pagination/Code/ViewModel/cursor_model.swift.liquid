@@ -1,0 +1,36 @@
+import LeadKit
+import RxSwift
+
+final class {{ module_info.name }}CursorConfiguration: TotalCountCursorConfiguration {
+
+    typealias ResultType = <#ResultType#>
+
+    private var page: Int = 1
+
+    init(<#arguments#>) {
+        //
+    }
+
+    init(resetFrom other: {{ module_info.name }}CursorConfiguration) {
+        self.page = other.page
+    }
+
+    func resultSingle() -> Single<ResultType> {
+         defer {
+            page += 1
+         }
+
+        return NetworkService.shared.listing(page: page)
+    }
+
+}
+
+typealias {{ module_info.name }}Cursor = TotalCountCursor<{{ module_info.name }}CursorConfiguration>
+
+extension TotalCountCursor where CursorConfiguration == {{ module_info.name }}CursorConfiguration {
+
+    convenience init(<#arguments#>) {
+        self.init(configuration: {{ module_info.name }}CursorConfiguration(<#arguments#>))
+    }
+
+}
