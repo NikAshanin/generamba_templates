@@ -1,0 +1,63 @@
+import UIKit
+import LeadKit
+import StatefulViewController
+
+final class {{ module_info.name }}ViewController: UIViewController,
+    StatefulViewController,
+    DisposeBagHolder {
+
+    var viewModel: {{ module_info.name }}ViewModel!
+
+    // MARK: - View Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        initialLoadDataLoadingView()
+    }
+
+}
+
+extension {{ module_info.name }}ViewController: ConfigurableController {
+
+    func bindViews() {
+        <#code#>
+    }
+
+    func setAppearance() {
+        <#code#>
+    }
+
+    func addViews() {
+        <#code#>
+    }
+
+    func configureBarButtons() {
+        <#code#>
+    }
+
+    func localize() {
+        <#code#>
+    }
+
+}
+
+extension {{ module_info.name }}ViewController: GeneralDataLoadingController {
+
+    func onLoadingState() {
+        startLoading(animated: false)
+    }
+
+    func onResultsState(result: UserProfile) {
+        endLoading(animated: false)
+    }
+
+    func onEmptyState() {
+        endLoading(animated: false)
+    }
+
+    func onErrorState(error: Error) {
+        endLoading(animated: false, error: error)
+    }
+
+}

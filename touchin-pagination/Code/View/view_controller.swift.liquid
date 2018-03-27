@@ -1,0 +1,73 @@
+import UIKit
+import LeadKit
+import TableKit
+
+final class {{ module_info.name }}ViewController: UIViewController {
+
+    var viewModel: {{ module_info.name }}ViewModel!
+
+    @IBOutlet private weak var tableView: UITableView!
+
+    private lazy var tableDirector = TableDirector(tableView: tableView)
+
+    private lazy var paginationWrapper = {
+        PaginationWrapper(wrappedView: AnyPaginationWrappable(view: tableView),
+                          cursor: viewModel.cursor,
+                          delegate: self)
+    }()
+
+    // MARK: - View Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        initialLoadView()
+    }
+
+}
+
+extension {{ module_info.name }}ViewController: ConfigurableController {
+
+    func bindViews() {
+        paginationWrapper.reload()
+    }
+
+    func setAppearance() {
+        <#code#>
+    }
+
+    func addViews() {
+        <#code#>
+    }
+
+    func configureBarButtons() {
+        <#code#>
+    }
+
+    func localize() {
+        <#code#>
+    }
+
+}
+
+extension {{ module_info.name }}ViewController: PaginationWrapperDelegate {
+
+    typealias DataSourceType = {{ module_info.name }}Cursor
+
+    func paginationWrapper(didLoad newItems: DataSourceType.ResultType,
+                           using dataSource: DataSourceType) {
+
+        tableDirector.append(rows: <#T##[Row]#>)
+    }
+
+    func paginationWrapper(didReload allItems: DataSourceType.ResultType,
+                           using dataSource: DataSourceType) {
+
+        tableDirector.replace(withRows: <#T##[Row]#>)
+    }
+
+    func clearView() {
+        tableDirector.safeClear()
+    }
+
+}
