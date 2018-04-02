@@ -6,7 +6,7 @@ import RxCocoa
 /// <#Cell description#>
 final class {{ module_info.name }}: UITableViewCell, ConfigurableCell {
 
-    fileprivate var disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
 
     override func prepareForReuse() {
         super.prepareForReuse()

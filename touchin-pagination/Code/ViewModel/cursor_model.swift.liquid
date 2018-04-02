@@ -16,11 +16,11 @@ final class {{ module_info.name }}CursorConfiguration: TotalCountCursorConfigura
     }
 
     func resultSingle() -> Single<ResultType> {
-         defer {
-            page += 1
-         }
-
-        return NetworkService.shared.listing(page: page)
+        return NetworkService.shared
+            .listing(page: page)
+            .do(onSuccess: { [weak self] _ in
+                self?.page += 1
+            })
     }
 
 }
