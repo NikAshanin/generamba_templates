@@ -8,13 +8,11 @@ license: "MIT"
 # The declarations for code files
 
 code_files:
-# Assembly layer
-- {name: Assembly/Assembly.swift,  path: Code/Assembly/assembly.swift.liquid}
+# NavigationService layer
 - {name: Assembly/NavigationService.swift,  path: Code/Assembly/navigation_service.swift.liquid, custom_name: "NavigationService+{{module_info.name}}.swift"}
 
 # View layer
 - {name: View/ViewController.swift,  path: Code/View/view_controller.swift.liquid}
-- {name: View/ViewController.xib,  path: Code/View/view_controller.xib.liquid}
 
 # ViewModel layer
 - {name: ViewModel/ViewModel.swift,  path: Code/ViewModel/view_model.swift.liquid}
