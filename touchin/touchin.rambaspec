@@ -1,8 +1,8 @@
 # Template information section
-name: "swifty_mvvm_touchin"
-summary: "Swift MVVM module template using in Touch Instinct"
+name: "touchin"
+summary: "Swift MVVM module template using in TouchInstinct"
 author: "Nikolay Ashanin"
-version: "0.1.0"
+version: "1.1"
 license: "MIT"
 
 # The declarations for code files
