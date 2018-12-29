@@ -3,12 +3,7 @@ import LeadKit
 import RxSwift
 import RxCocoa
 
-// MARK: - Constants
-
-private enum Constants {
-}
-
-final class {{ module_info.name }}ViewController: BaseViewController<{{ module_info.name }}ViewModel> {
+final class {{ module_info.name }}ViewController: BaseConfigurableController<{{ module_info.name }}ViewModel>, DisposeBagHolder {
 
     // MARK: - Overrides
 
@@ -61,11 +56,8 @@ final class {{ module_info.name }}ViewController: BaseViewController<{{ module_i
         <#code#>
     }
 
-}
+    // MARK: - Actions
 
-// MARK: - Action
-
-private extension {{ module_info.name }}ViewController {
 }
 
 // MARK: - Constraints
