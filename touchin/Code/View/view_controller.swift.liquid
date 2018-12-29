@@ -11,12 +11,9 @@ final class {{ module_info.name }}ViewController: BaseConfigurableController<{{ 
 
     // MARK: - Properties
 
+    var disposeBag = DisposeBag()
+
     // MARK: - View Life Cycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
 
     // MARK: - ConfigurableController
 
