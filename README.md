@@ -1,6 +1,6 @@
 # Generamba templates
 
-## touchin
+## touchin-configurable
 
 Module with controller, view-model and assembly
 
@@ -13,6 +13,10 @@ Module with controller, view model, cursor and assebly. It loads paginated resul
 ## touchin-tablecell
 
 Module for cell generation. Contains: Cell, ViewModel and xib file
+
+## touchin-custom-view
+
+Module with controller with custom view, view-model and assembly
 
 ### Example
 
