@@ -1,8 +1,0 @@
-extension NavigationService {
-
-    static func {{ module_info.name | prepend:'create' }}ViewController() -> {{ module_info.name }}ViewController {
-        let viewModel = {{ module_info.name }}ViewModel()
-        return {{ module_info.name }}ViewController(viewModel: viewModel)
-    }
-
-}

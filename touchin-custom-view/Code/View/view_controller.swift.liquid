@@ -3,7 +3,7 @@ import LeadKit
 import RxSwift
 import RxCocoa
 
-final class {{ module_info.name }}ViewController: BaseConfigurableController<{{ module_info.name }}ViewModel>, DisposeBagHolder {
+final class {{ module_info.name }}ViewController: BaseCustomViewController<{{ module_info.name }}ViewModel, {{ module_info.name }}View>, {{ module_info.name }}Module, DisposeBagHolder {
 
     // MARK: - Overrides
 
@@ -16,18 +16,6 @@ final class {{ module_info.name }}ViewController: BaseConfigurableController<{{ 
     // MARK: - View Life Cycle
 
     // MARK: - ConfigurableController
-
-    override func addViews() {
-        super.addViews()
-
-        <#code#>
-    }
-
-    override func configureLayout() {
-        super.configureLayout()
-
-        <#code#>
-    }
 
     override func bindViews() {
         super.bindViews()
@@ -55,11 +43,6 @@ final class {{ module_info.name }}ViewController: BaseConfigurableController<{{ 
 
     // MARK: - Actions
 
-}
-
-// MARK: - Public
-
-extension {{ module_info.name }}ViewController {
 }
 
 // MARK: - Private

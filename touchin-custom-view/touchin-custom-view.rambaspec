@@ -1,0 +1,22 @@
+# Template information section
+name: "touchin-custom-view"
+summary: "Swift MVVM module template with custom view and protocol-abstracted view model"
+author: "Nikita Krasnov"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# Assembly layer
+- {name: Assembly/module_assembly.swift,  path:  Code/Assembly/module_assembly.swift.liquid, custom_name: "{{module_info.name}}ModuleAssembly.swift"}
+- {name: Assembly/module.swift,  path: Code/Assembly/module.swift.liquid, custom_name: "{{module_info.name}}Module.swift"}
+
+# View layer
+- {name: View/ViewController.swift,  path: Code/View/view_controller.swift.liquid, custom_name: "{{module_info.name}}ViewController.swift"}
+- {name: View/ViewOutput.swift,  path: Code/View/view_output.swift.liquid, custom_name: "{{module_info.name}}ViewOutput.swift"}
+- {name: View/View.swift,  path: Code/View/view.swift.liquid, custom_name: "{{module_info.name}}View.swift"}
+
+
+# ViewModel layer
+- {name: ViewModel/ViewModel.swift,  path: Code/ViewModel/view_model.swift.liquid, custom_name: "{{module_info.name}}ViewModel.swift"}

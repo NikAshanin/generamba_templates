@@ -1,0 +1,68 @@
+import UIKit
+import LeadKit
+import RxSwift
+import RxCocoa
+
+final class {{ module_info.name }}ViewController: BaseConfigurableController<{{ module_info.name }}ViewModel>, {{ module_info.name }}Module, DisposeBagHolder {
+
+    // MARK: - Overrides
+
+    // MARK: - Views
+
+    // MARK: - Properties
+
+    let disposeBag = DisposeBag()
+
+    // MARK: - View Life Cycle
+
+    // MARK: - ConfigurableController
+
+    override func addViews() {
+        super.addViews()
+
+        <#code#>
+    }
+
+    override func configureLayout() {
+        super.configureLayout()
+
+        <#code#>
+    }
+
+    override func bindViews() {
+        super.bindViews()
+
+        <#code#>
+    }
+
+    override func configureAppearance() {
+        super.configureAppearance()
+
+        <#code#>
+    }
+
+    override func localize() {
+        super.localize()
+
+        <#code#>
+    }
+
+    override func configureBarButtons() {
+        super.configureBarButtons()
+
+        <#code#>
+    }
+
+    // MARK: - Actions
+
+}
+
+// MARK: - Public
+
+extension {{ module_info.name }}ViewController {
+}
+
+// MARK: - Private
+
+private extension {{ module_info.name }}ViewController {
+}
