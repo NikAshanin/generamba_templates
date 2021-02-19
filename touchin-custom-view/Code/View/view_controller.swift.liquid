@@ -15,6 +15,12 @@ final class {{ module_info.name }}ViewController: BaseCustomViewController<{{ mo
 
     // MARK: - View Life Cycle
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        initialLoadView()
+    }
+
     // MARK: - ConfigurableController
 
     override func bindViews() {
